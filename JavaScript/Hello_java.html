@@ -1,0 +1,45 @@
+<!DCOTYPE html>
+<html>
+<head> <title> Hello Java Script</title> 
+	<style>   
+	.table_design{
+		border:2px solid black;
+		 border-collapse: collapse;
+	}
+	.th_design{
+		border:1px solid black;
+	}
+	</style>
+</head>
+<body id="body">
+
+	<script>
+
+	"use strict"
+	let rows = Number(prompt('Enter the number of rows','0'));
+	let columns = Number(prompt('Enter the number of columns','0'));
+	if(rows >=1 && columns >=1) {
+				let table = document.createElement('table');
+				table.className = "table_design";
+				for (let i = 0; i<rows; i++) {
+					   let row = document.createElement('tr');
+					   for (let j=0; j<columns; j++) {
+							let column = document.createElement('td');
+							column.className = "th_design";
+							column.innerHTML = "Row - "+ i + ": column -  " + j;
+							row.appendChild(column);
+					     }
+					    table.appendChild(row);
+		        }
+
+                document.getElementById("body").appendChild(table);
+
+		        
+	 } else {
+			alert("please enter valid row and column number");
+	}
+		</script>
+
+
+	</body>
+	</html>
